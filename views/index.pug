@@ -1,0 +1,20 @@
+block vars
+    - let quotes = data.docs
+
+h1 This is the index page. 
+
+button(onclick="randomQuote()") Click for a random quote
+
+p(class="quoteArea")
+
+script. 
+    function randomQuote() {
+        document.querySelector(".quoteArea").innerText = newQuote()
+    }
+
+script.
+    function newQuote() {
+        return '#{quotes[Math.floor(Math.random()*quotes.length)].dialog}'
+        }
+
+    
